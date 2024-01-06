@@ -120,6 +120,7 @@ settings["lsp_deps"] = {
 	-- "denols",
 	"eslint",
 	"tsserver"
+	"denols",
 	-- "gopls",
 }
 
