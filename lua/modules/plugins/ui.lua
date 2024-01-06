@@ -67,5 +67,10 @@ ui["edluffy/specs.nvim"] = {
 	event = "CursorMoved",
 	config = require("ui.specs"),
 }
+ui["navarasu/onedark.nvim"] = {
+	lazy = false,
+	as = "onedark",
+	config = require("ui.onedark"),
+}
 
 return ui
