@@ -3,7 +3,7 @@ return function()
 
 	local opts = {
 		options = {
-			number = nil,
+			numbers = 'ordinal',
 			close_command = "BufDel! %d",
 			right_mouse_command = "BufDel! %d",
 			modified_icon = icons.ui.Modified,
