@@ -113,6 +113,19 @@ local clipboard_config = function()
 			},
 			cache_enabled = 0,
 		}
+	elseif global.is_linux then
+		vim.g.clipboard = {
+			name = "myClipboard",
+			copy = {
+				["+"] = "clipboard-provider copy",
+				["*"] = "clipboard-provider copy",
+			},
+			paste = {
+				["+"] = "clipboard-provider paste",
+				["*"] = "clipboard-provider paste",
+			},
+			cache_enabled = 0,
+		}
 	end
 end
 
@@ -164,6 +177,10 @@ local load_core = function()
 	local background = settings.background
 	vim.api.nvim_command("set background=" .. background)
 	vim.api.nvim_command("colorscheme " .. colorscheme)
+
+	if global.is_mac then
+		vim.g.python3_host_prog = "/opt/homebrew/bin/python3"
+	end
 end
 
 load_core()
