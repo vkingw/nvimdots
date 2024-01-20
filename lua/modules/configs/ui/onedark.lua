@@ -14,7 +14,7 @@ return function()
 
 		-- Change code style ---
 		-- Options are italic, bold, underline, none
-		-- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
+		-- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
 		code_style = {
 			comments = 'italic',
 			keywords = 'none',
@@ -38,7 +38,7 @@ return function()
 			undercurl = true,   -- use undercurl instead of underline for diagnostics
 			background = true,    -- use background color for virtual text
 		},
-        transparent = {
+		transparent = {
 			lualine = bool,
 			background = bool,
 			tabline = bool,
