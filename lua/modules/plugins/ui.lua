@@ -69,7 +69,8 @@ ui["dstein64/nvim-scrollview"] = {
 }
 ui["navarasu/onedark.nvim"] = {
 	lazy = false,
-	as = "onedark",
+	-- as = "onedark",
+	name = "onedark",
 	config = require("ui.onedark"),
 }
 
