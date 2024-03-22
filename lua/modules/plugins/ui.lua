@@ -57,15 +57,21 @@ ui["folke/paint.nvim"] = {
 	event = { "CursorHold", "CursorHoldI" },
 	config = require("ui.paint"),
 }
+ui["folke/todo-comments.nvim"] = {
+	lazy = true,
+	event = { "BufReadPost" },
+	opts = {},
+}
 ui["dstein64/nvim-scrollview"] = {
 	lazy = true,
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	config = require("ui.scrollview"),
 }
-ui["edluffy/specs.nvim"] = {
-	lazy = true,
-	event = "CursorMoved",
-	config = require("ui.specs"),
+ui["navarasu/onedark.nvim"] = {
+	lazy = false,
+	-- as = "onedark",
+	name = "onedark",
+	config = require("ui.onedark"),
 }
 ui["navarasu/onedark.nvim"] = {
 	lazy = false,
