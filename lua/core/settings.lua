@@ -120,8 +120,7 @@ settings["lsp_deps"] = {
 	"tsserver"
 	"denols",
 	"eslint",
-	"tsserver"
-	-- "gopls",
+	"tsserver",
 }
 
 -- Set the general-purpose servers that will be installed during bootstrap here.
