@@ -109,7 +109,8 @@ settings["lsp_deps"] = {
 	"pylsp",
 	"jedi_language_server",
 	"cssls",
-	-- "denols",
+	"tsserver"
+	"denols",
 	"eslint",
 	"tsserver"
 	-- "gopls",
