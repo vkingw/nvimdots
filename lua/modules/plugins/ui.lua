@@ -67,5 +67,10 @@ ui["dstein64/nvim-scrollview"] = {
 	event = { "BufReadPost", "BufAdd", "BufNewFile" },
 	config = require("ui.scrollview"),
 }
+ui["navarasu/onedark.nvim"] = {
+	lazy = true,
+	as = "onedark",
+	config = require("ui.onedark"),
+}
 
 return ui
