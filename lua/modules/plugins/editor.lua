@@ -100,7 +100,11 @@ editor["mrjones2014/smart-splits.nvim"] = {
 editor["nvim-treesitter/nvim-treesitter"] = {
 	lazy = true,
 	build = function()
-		if #vim.api.nvim_list_uis() > 0 then
+		-- if #vim.api.nvim_list_uis() > 0 then
+		-- 	vim.api.nvim_command([[TSUpdate]])
+		-- end
+		-- Check if Treesitter is installed before running TSUpdate
+		if vim.fn.exists(":TSUpdate") == 2 and #vim.api.nvim_list_uis() > 0 then
 			vim.api.nvim_command([[TSUpdate]])
 		end
 	end,
