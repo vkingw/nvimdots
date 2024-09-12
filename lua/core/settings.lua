@@ -118,8 +118,7 @@ settings["lsp_deps"] = {
 	"jedi_language_server",
 	"cssls",
 	"denols",
-	"eslint",
-	"tsserver",
+	"eslint"
 }
 
 -- Set the general-purpose servers that will be installed during bootstrap here.
