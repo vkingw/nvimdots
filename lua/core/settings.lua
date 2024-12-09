@@ -2,11 +2,11 @@ local settings = {}
 
 -- Set it to false if you want to use https to update plugins and treesitter parsers.
 ---@type boolean
-settings["use_ssh"] = true
+settings["use_ssh"] = false
 
 -- Set it to false if you don't use copilot
 ---@type boolean
-settings["use_copilot"] = true
+settings["use_copilot"] = false
 
 -- Set it to false if there is no need to format on save.
 ---@type boolean
@@ -33,22 +33,22 @@ settings["format_modifications_only"] = false
 --- NOTE: Directories are automatically normalized. |vim.fs.normalize()|
 ---@type string[]
 settings["format_disabled_dirs"] = {
-	-- Example
-	"~/format_disabled_dir",
+    -- Example
+    "~/format_disabled_dir",
 }
 
 -- Filetypes in this list will skip lsp formatting if rhs is true.
 ---@type table<string, boolean>
 settings["formatter_block_list"] = {
-	lua = false, -- example
+    lua = false, -- example
 }
 
 -- Servers in this list will skip setting formatting capabilities if rhs is true.
 ---@type table<string, boolean>
 settings["server_formatting_block_list"] = {
-	clangd = true,
-	lua_ls = true,
-	ts_ls = true,
+    clangd = true,
+    lua_ls = true,
+    ts_ls = true,
 }
 
 -- Set it to false if you want to turn off LSP Inlay Hints
@@ -86,11 +86,12 @@ settings["palette_overwrite"] = {}
 -- Set the colorscheme to use here.
 -- Available values are: `catppuccin`, `catppuccin-latte`, `catppucin-mocha`, `catppuccin-frappe`, `catppuccin-macchiato`.
 ---@type string
-settings["colorscheme"] = "catppuccin"
+-- settings["colorscheme"] = "catppuccin"
+settings["colorscheme"] = "onedark"
 
 -- Set it to true if your terminal has transparent background.
 ---@type boolean
-settings["transparent_background"] = false
+settings["transparent_background"] = true
 
 -- Set background color to use here.
 -- Useful if you would like to use a colorscheme that has a light and dark variant like `edge`.
@@ -108,13 +109,17 @@ settings["external_browser"] = "chrome-cli open"
 -- https://github.com/neovim/nvim-lspconfig/tree/master/lua/lspconfig/server_configurations
 ---@type string[]
 settings["lsp_deps"] = {
-	"bashls",
-	"clangd",
-	"html",
-	"jsonls",
-	"lua_ls",
-	"pylsp",
-	"gopls",
+    "bashls",
+    "clangd",
+    "html",
+    "jsonls",
+    "lua_ls",
+    "pylsp",
+    "gopls",
+    "jedi_language_server",
+    "cssls",
+    "denols",
+    "eslint",
 }
 
 -- Set the general-purpose servers that will be installed during bootstrap here.
@@ -123,13 +128,13 @@ settings["lsp_deps"] = {
 -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins
 ---@type string[]
 settings["null_ls_deps"] = {
-	"clang_format",
-	"gofumpt",
-	"goimports",
-	"prettier",
-	"shfmt",
-	"stylua",
-	"vint",
+    "clang_format",
+    "gofumpt",
+    "goimports",
+    "prettier",
+    "shfmt",
+    "stylua",
+    "vint",
 }
 
 -- Set the Debug Adapter Protocol (DAP) clients that will be installed and configured during bootstrap here.
@@ -137,7 +142,7 @@ settings["null_ls_deps"] = {
 -- https://github.com/jay-babu/mason-nvim-dap.nvim/blob/main/lua/mason-nvim-dap/mappings/source.lua
 ---@type string[]
 settings["dap_deps"] = {
-	"codelldb", -- C-Family
+    "codelldb", -- C-Family
 	"delve", -- Go
 	"python", -- Python (debugpy)
 }
@@ -147,35 +152,35 @@ settings["dap_deps"] = {
 -- https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
 ---@type string[]
 settings["treesitter_deps"] = {
-	"bash",
-	"c",
-	"cpp",
-	"css",
-	"go",
-	"gomod",
-	"html",
-	"javascript",
-	"json",
-	"jsonc",
-	"latex",
-	"lua",
-	"make",
-	"markdown",
-	"markdown_inline",
-	"python",
-	"rust",
-	"typescript",
-	"vimdoc",
-	"vue",
-	"yaml",
+    "bash",
+    "c",
+    "cpp",
+    "css",
+    "go",
+    "gomod",
+    "html",
+    "javascript",
+    "json",
+    "jsonc",
+    "latex",
+    "lua",
+    "make",
+    "markdown",
+    "markdown_inline",
+    "python",
+    "rust",
+    "typescript",
+    "vimdoc",
+    "vue",
+    "yaml",
 }
 
 -- Set the options for neovim's gui clients like `neovide` and `neovim-qt` here.
 -- NOTE: Currently, only the following options related to the GUI are supported. Other entries will be IGNORED.
 ---@type { font_name: string, font_size: number }
 settings["gui_config"] = {
-	font_name = "JetBrainsMono Nerd Font",
-	font_size = 12,
+    font_name = "JetBrainsMono Nerd Font",
+    font_size = 12,
 }
 
 -- Set the options specific to `neovide` here.
@@ -184,16 +189,16 @@ settings["gui_config"] = {
 -- https://neovide.dev/configuration.html
 ---@type table<string, boolean|number|string>
 settings["neovide_config"] = {
-	no_idle = true,
-	refresh_rate = 120,
-	cursor_vfx_mode = "railgun",
-	cursor_vfx_opacity = 200.0,
-	cursor_antialiasing = true,
-	cursor_trail_length = 0.05,
-	cursor_animation_length = 0.03,
-	cursor_vfx_particle_speed = 20.0,
-	cursor_vfx_particle_density = 5.0,
-	cursor_vfx_particle_lifetime = 1.2,
+    no_idle = true,
+    refresh_rate = 120,
+    cursor_vfx_mode = "railgun",
+    cursor_vfx_opacity = 200.0,
+    cursor_antialiasing = true,
+    cursor_trail_length = 0.05,
+    cursor_animation_length = 0.03,
+    cursor_vfx_particle_speed = 20.0,
+    cursor_vfx_particle_density = 5.0,
+    cursor_vfx_particle_lifetime = 1.2,
 }
 
 -- Set the dashboard startup image here
@@ -201,25 +206,41 @@ settings["neovide_config"] = {
 -- More info: https://github.com/ayamir/nvimdots/wiki/Issues#change-dashboard-startup-image
 ---@type string[]
 settings["dashboard_image"] = {
-	[[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⣠⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣡⣾⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣟⠻⣿⣿⣿⣿⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⣿⣿⡿⢫⣷⣿⣿⣿⣿⣿⣿⣿⣾⣯⣿⡿⢧⡚⢷⣌⣽⣿⣿⣿⣿⣿⣶⡌⣿⣿⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣮⣇⣘⠿⢹⣿⣿⣿⣿⣿⣻⢿⣿⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⣿⣿⠀⢸⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⡟⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣻⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⣿⡇⠀⣬⠏⣿⡇⢻⣿⣿⣿⣿⣿⣿⣿⣷⣼⣿⣿⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⣿⠀⠈⠁⠀⣿⡇⠘⡟⣿⣿⣿⣿⣿⣿⣿⣿⡏⠿⣿⣟⣿⣿⣿⣿⣿⣿⣿⣿⣇⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⡏⠀⠀⠐⠀⢻⣇⠀⠀⠹⣿⣿⣿⣿⣿⣿⣩⡶⠼⠟⠻⠞⣿⡈⠻⣟⢻⣿⣿⣿⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⢿⠀⡆⠀⠘⢿⢻⡿⣿⣧⣷⢣⣶⡃⢀⣾⡆⡋⣧⠙⢿⣿⣿⣟⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⡥⠂⡐⠀⠁⠑⣾⣿⣿⣾⣿⣿⣿⡿⣷⣷⣿⣧⣾⣿⣿⣿⣿⣿⣿⣿]],
-	[[⣿⣿⡿⣿⣍⡴⠆⠀⠀⠀⠀⠀⠀⠀⠀⣼⣄⣀⣷⡄⣙⢿⣿⣿⣿⣿⣯⣶⣿⣿⢟⣾⣿⣿⢡⣿⣿⣿⣿⣿]],
-	[[⣿⡏⣾⣿⣿⣿⣷⣦⠀⠀⠀⢀⡀⠀⠀⠠⣭⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⣡⣾⣿⣿⢏⣾⣿⣿⣿⣿⣿]],
-	[[⣿⣿⣿⣿⣿⣿⣿⣿⡴⠀⠀⠀⠀⠀⠠⠀⠰⣿⣿⣿⣷⣿⠿⠿⣿⣿⣭⡶⣫⠔⢻⢿⢇⣾⣿⣿⣿⣿⣿⣿]],
-	[[⣿⣿⣿⡿⢫⣽⠟⣋⠀⠀⠀⠀⣶⣦⠀⠀⠀⠈⠻⣿⣿⣿⣾⣿⣿⣿⣿⡿⣣⣿⣿⢸⣾⣿⣿⣿⣿⣿⣿⣿]],
-	[[⡿⠛⣹⣶⣶⣶⣾⣿⣷⣦⣤⣤⣀⣀⠀⠀⠀⠀⠀⠀⠉⠛⠻⢿⣿⡿⠫⠾⠿⠋⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
-	[[⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀⡆⣠⢀⣴⣏⡀⠀⠀⠀⠉⠀⠀⢀⣠⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
-	[[⠿⠛⠛⠛⠛⠛⠛⠻⢿⣿⣿⣿⣿⣯⣟⠷⢷⣿⡿⠋⠀⠀⠀⠀⣵⡀⢠⡿⠋⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿]],
-	[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⢿⣿⣿⠂⠀⠀⠀⠀⠀⢀⣽⣿⣿⣿⣿⣿⣿⣿⣍⠛⠿⣿⣿⣿⣿⣿⣿]],
+    [[                                                                              										]],
+    [[ $$$$$$$$\                                  $$\                                  										]],
+    [[ $$  _____|                                 $$ |                                    									]],
+    [[ $$ |    $$$$$$\   $$$$$$\   $$$$$$\   $$$$$$$ | $$$$$$\  $$$$$$\$$$$\                 								]],
+    [[ $$$$$\ $$  __$$\ $$  __$$\ $$  __$$\ $$  __$$ |$$  __$$\ $$  _$$  _$$\                   							]],
+    [[ $$  __|$$ |  \__|$$$$$$$$ |$$$$$$$$ |$$ /  $$ |$$ /  $$ |$$ / $$ / $$ |                     							]],
+    [[ $$ |   $$ |      $$   ____|$$   ____|$$ |  $$ |$$ |  $$ |$$ | $$ | $$ |                        						]],
+    [[ $$ |   $$ |      \$$$$$$$\ \$$$$$$$\ \$$$$$$$ |\$$$$$$  |$$ | $$ | $$ |                           					]],
+    [[ \__|   \__|       \_______| \_______| \_______| \______/ \__| \__| \__|                              				]],
+    [[ 																												 		]],
+    [[ 																												 		]],
+    [[ 						     $$\                                                         $$\ $$\  $$$$$$\           	]],
+    [[ 						     $$ |                                                        $$ |\__|$$  __$$\          	]],
+    [[  $$$$$$\  $$$$$$$\   $$$$$$$ |       $$$$$$\  $$$$$$$\  $$\  $$$$$$\  $$\   $$\       $$ |$$\ $$ /  \__|$$$$$$\  	]],
+    [[  \____$$\ $$  __$$\ $$  __$$ |      $$  __$$\ $$  __$$\ \__|$$  __$$\ $$ |  $$ |      $$ |$$ |$$$$\    $$  __$$\ 	]],
+    [[  $$$$$$$ |$$ |  $$ |$$ /  $$ |      $$$$$$$$ |$$ |  $$ |$$\ $$ /  $$ |$$ |  $$ |      $$ |$$ |$$  _|   $$$$$$$$ | 	]],
+    [[ $$  __$$ |$$ |  $$ |$$ |  $$ |      $$   ____|$$ |  $$ |$$ |$$ |  $$ |$$ |  $$ |      $$ |$$ |$$ |     $$   ____| 	]],
+    [[ \$$$$$$$ |$$ |  $$ |\$$$$$$$ |      \$$$$$$$\ $$ |  $$ |$$ |\$$$$$$  |\$$$$$$$ |      $$ |$$ |$$ |     \$$$$$$$\  	]],
+    [[  \_______|\__|  \__| \_______|       \_______|\__|  \__|$$ | \______/  \____$$ |      \__|\__|\__|      \_______| 	]],
+    [[ 											         $$\   $$ |          $$\   $$ |                                 	]],
+    [[ 											         \$$$$$$  |          \$$$$$$  |                                 	]],
+    [[ 											          \______/            \______/                                  	]],
+    [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⣀⡀⠀⠀⠀⠀⠀⠀⠀]],
+    [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⠀⣼⣿⣿⣦⡀⠀⠀⠀⠀⠀]],
+    [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⢸⣿⣿⡟⢰⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀]],
+    [[⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⠿⢿⣦⣀⠀⠘⠛⠛⠃⠸⠿⠟⣫⣴⣶⣾⡆⠀⠀⠀]],
+    [[⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⡀⠀⠉⢿⣦⡀⠀⠀⠀⠀⠀⠀⠛⠿⠿⣿⠃⠀⠀⠀]],
+    [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣦⠀⠀⠹⣿⣶⡾⠛⠛⢷⣦⣄⠀⠀⠀⠀⠀⠀⠀]],
+    [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣧⠀⠀⠈⠉⣀⡀⠀⠀⠙⢿⡇⠀⠀⠀⠀⠀⠀]],
+    [[⠀⠀⠀⠀⠀⠀⠀⢀⣠⣴⡿⠟⠋⠀⠀⢠⣾⠟⠃⠀⠀⠀⢸⣿⡆⠀⠀⠀⠀⠀]],
+    [[⠀⠀⠀⠀⢀⣠⣶⡿⠛⠉⠀⠀⠀⠀⠀⣾⡇⠀⠀⠀⠀⠀⢸⣿⠇⠀⠀⠀⠀⠀]],
+    [[⠀⢀⣠⣾⠿⠛⠁⠀⠀⠀⠀⠀⠀⠀⢀⣼⣧⣀⠀⠀⠀⢀⣼⠇⠀⠀⠀⠀⠀⠀]],
+    [[⠀⠈⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⡿⠋⠙⠛⠛⠛⠛⠛⠁⠀⠀⠀⠀⠀⠀⠀]],
+    [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣾⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
+    [[⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
 }
 
 return require("modules.utils").extend_config(settings, "user.settings")
