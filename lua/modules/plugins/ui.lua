@@ -77,5 +77,10 @@ ui["navarasu/onedark.nvim"] = {
 	name = "onedark",
 	config = require("ui.onedark"),
 }
+ui["navarasu/onedark.nvim"] = {
+	lazy = false,
+	name = "onedark",
+	config = require("ui.onedark"),
+}
 
 return ui
