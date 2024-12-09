@@ -71,5 +71,10 @@ ui["folke/edgy.nvim"] = {
 	event = "VeryLazy",
 	config = require("ui.edgy"),
 }
+ui["navarasu/onedark.nvim"] = {
+	lazy = false,
+	name = "onedark",
+	config = require("ui.onedark"),
+}
 
 return ui
