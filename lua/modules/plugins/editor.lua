@@ -94,11 +94,7 @@ editor["nvim-pack/nvim-spectre"] = {
 ----------------------------------------------------------------------
 editor["nvim-treesitter/nvim-treesitter"] = {
 	lazy = true,
-	build = function()
-		if #vim.api.nvim_list_uis() > 0 then
-			vim.api.nvim_command([[TSUpdate]])
-		end
-	end,
+	build = ":TSUpdate",  -- 改用字符串形式而不是函数
 	event = "BufReadPre",
 	config = require("editor.treesitter"),
 	dependencies = {
