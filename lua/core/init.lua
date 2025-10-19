@@ -68,6 +68,19 @@ local clipboard_config = function()
 			},
 			cache_enabled = 0,
 		}
+    elseif global.is_linux then
+        vim.g.clipboard = {
+            name = "myClipboard",
+            copy = {
+                ["+"] = "clipboard-provider copy",
+                ["*"] = "clipboard-provider copy",
+            },
+            paste = {
+                ["+"] = "clipboard-provider paste",
+                ["*"] = "clipboard-provider paste",
+            },
+            cache_enabled = 0,
+        }
 	end
 end
 
